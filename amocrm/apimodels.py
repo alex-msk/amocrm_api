@@ -312,6 +312,8 @@ class BaseLead(_BaseModel):
 
 
 class BaseContact(_AbstractNamedModel):
+    first_name = fields._Field('first_name')
+    last_name = fields._Field('last_name')           
     leads_model = None
     leads = fields.ManyForeignField(BaseLead, 'linked_leads_id')
     type = fields._ConstantField('type', 'contact')
